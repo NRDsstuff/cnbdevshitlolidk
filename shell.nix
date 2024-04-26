@@ -1,7 +1,7 @@
 let
   nixpkgs = fetchTarball "https://github.com/NixOS/nixpkgs/tarball/nixos-23.11";
   pkgs = import nixpkgs { config = { allowUnfree = true; }; overlays = []; };
-  authtoken = builtins.readFile ./.env;
+  authtoken = builtins.readFile ./.token;
 in
 
 pkgs.mkShellNoCC{
